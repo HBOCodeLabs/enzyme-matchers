@@ -1,5 +1,6 @@
 import instance from './instance';
 /* eslint-disable no-console */
+var consoleObject = console || {};
 const noop = () => {};
 const error = console.error;
 const SHALLOW_WRAPPER_CONSTRUCTOR = 'ShallowWrapper';
@@ -9,11 +10,11 @@ function mapWrappersHTML(wrapper) : string {
     const inst = instance(node);
     const type = node.type || inst._tag;
 
-    console.error = noop;
+    consoleObject.error = noop;
     const { children, ...props } = node.props
       ? node.props
       : inst._currentElement.props;
-    console.error = error;
+    consoleObject.error = error;
 
     const transformedProps = Object.keys(props).map(key => `${key}="${props[key]}"`);
     let stringifiedNode = `<${type} ${transformedProps.join(' ')}`;
