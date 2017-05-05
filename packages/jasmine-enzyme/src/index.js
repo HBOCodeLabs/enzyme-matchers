@@ -11,7 +11,7 @@ import enzymeMatchers from 'enzyme-matchers';
 
 declare var jest:Object;
 
-export default function jasmineEnzyme() : void {
+function jasmineEnzyme() : void {
   // Migration step for moving people from jasmine-enzyme
   // to jest-enzyme
   if (typeof jest !== 'undefined') {
@@ -29,3 +29,8 @@ export default function jasmineEnzyme() : void {
     });
   });
 }
+
+export default {
+  jasmineEnzyme,
+  enzymeMatchers,
+};
