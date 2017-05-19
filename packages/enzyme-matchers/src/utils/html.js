@@ -2,7 +2,7 @@ import instance from './instance';
 /* eslint-disable no-console */
 var consoleObject = console || {};
 const noop = () => {};
-const error = console.error;
+const error = consoleObject.error;
 const SHALLOW_WRAPPER_CONSTRUCTOR = 'ShallowWrapper';
 
 function mapWrappersHTML(wrapper) : string {
