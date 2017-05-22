@@ -9,7 +9,7 @@ try {
 }
 const noop = () => {};
 const error = consoleObject.error;
-const SHALLOW_WRAPPER_CONSTRUCTOR = 'ShallowWrapper';
+import { ShallowWrapper } from 'enzyme';
 
 function mapWrappersHTML(wrapper) : string {
   return wrapper.nodes.map(node => {
@@ -41,7 +41,7 @@ export default function printHTMLForWrapper(wrapper) : string {
       return '[empty set]';
     }
     case 1: {
-      if (wrapper.constructor.name === SHALLOW_WRAPPER_CONSTRUCTOR) {
+      if (wrapper instanceof ShallowWrapper) {
         return wrapper.debug().replace(/\n/g, '');
       }
 
