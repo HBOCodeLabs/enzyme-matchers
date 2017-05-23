@@ -1,4 +1,5 @@
 import instance from './instance';
+import isShallowWrapper from './isShallowWrapper';
 /* eslint-disable no-console */
 let consoleObject;
 try {
@@ -9,17 +10,6 @@ try {
 }
 const noop = () => {};
 const error = consoleObject.error;
-const SHALLOW_WRAPPER_CONSTRUCTOR = 'ShallowWrapper';
-
-function isShallowWrapper(wrapper) : boolean {
-  let isShallow;
-  if (wrapper.constructor.name !== undefined) {
-    isShallow = wrapper.constructor.name === SHALLOW_WRAPPER_CONSTRUCTOR;
-  } else {
-    isShallow = !!(`${wrapper.constructor}`).match(/^function ShallowWrapper\(/);
-  }
-  return isShallow;
-}
 
 function mapWrappersHTML(wrapper) : string {
   return wrapper.nodes.map(node => {
