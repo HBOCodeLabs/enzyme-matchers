@@ -20,6 +20,7 @@ import toHaveTagName from './assertions/toHaveTagName';
 import toHaveText from './assertions/toHaveText';
 import toIncludeText from './assertions/toIncludeText';
 import toHaveValue from './assertions/toHaveValue';
+import toMatchElement from './assertions/toMatchElement';
 import toMatchSelector from './assertions/toMatchSelector';
 
 export default {
@@ -38,5 +39,6 @@ export default {
   toHaveText,
   toIncludeText,
   toHaveValue,
+  toMatchElement,
   toMatchSelector,
 };

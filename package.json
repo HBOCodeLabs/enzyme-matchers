@@ -44,7 +44,7 @@
     "babel-preset-es2015": "^6.5.0",
     "babel-preset-react": "^6.5.0",
     "babel-register": "^6.5.2",
-    "enzyme": "^2.7.1",
+    "enzyme": "git+https://github.com/finnigantime/enzyme.git#ffbec3dc8dbe760db186cfbbf71d59f482f77c7e",
     "eslint": "^2.7.0",
     "eslint-config-airbnb": "^6.2.0",
     "eslint-plugin-react": "^4.3.0",
